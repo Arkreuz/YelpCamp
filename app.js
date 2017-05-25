@@ -7,6 +7,7 @@ LocalStrategy = require("passport-local"),
 Campground  = require("./models/campground"),
 Comment     = require("./models/comment"),
 User = require ("./models/user"),
+methodOverride = require("method-override"),
 seedDB      = require("./seeds")
 
 
@@ -20,6 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 console.log(__dirname);
+app.use(methodOverride("_method"));
 // seedDB(); //seed the database
 
 //PASSPORT configuration
