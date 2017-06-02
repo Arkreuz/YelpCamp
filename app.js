@@ -18,11 +18,13 @@ campgroundsRoutes =  require("./routes/campgrounds"),
 indexRoutes =  require("./routes/index");
 
 //mongoose.connect("mongodb://localhost/yelpcamp");
-mongoose.connect("mongodb://Arkreuz:Arkeyword@ds161041.mlab.com:61041/yelpcampv2");
+//mongoose.connect("mongodb://Arkreuz:Arkeyword@ds161041.mlab.com:61041/yelpcampv2");
 //   mongodb://Arkreuz:Arkeyword@ds161041.mlab.com:61041/yelpcampv2
 
 //console.log(process.env.DATABASEURL);
-mongoose.connect(DATABASEURL);
+
+//Assign local enviroment variable
+mongoose.connect(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
